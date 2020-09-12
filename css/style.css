@@ -1,0 +1,523 @@
+/** BODY **/
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #c97d60;
+}
+
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+}
+
+h2 {
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+/********************* HEADER ***************************/
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../assets/header.jpeg");
+    background-size: cover;
+    text-align: center;
+}
+#header h1 {
+    font-size: 8vw;
+    padding-top: 5%;
+    font-family: "Bungee Shade";
+    color: #d11d44;
+    text-transform: uppercase;
+}
+#header h2 {
+    font-size: 7vw;
+    padding-top: 5%;
+    font-family: "Bungee Shade";
+    color: #d11d44;
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 780px) {
+    #header {
+        background-position-x: -390px;
+    }
+    #header h1 {
+        padding-top: 15%;
+    }
+}
+
+/********************* PROFILE ***************************/
+#profile {
+    height: 100vh;
+    background-color: #b59e94;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+#profile h1 {
+    font-family: "Bungee Shade";
+    font-size: 5vw;
+    color: #02142b;
+    margin: auto;
+    text-align: center;
+}
+* {
+    box-sizing: border-box;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    border-radius: 5px;
+}
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 1%;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 5px;
+}
+.timeline .timeline-year {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.timeline .timeline-year:not(:last-of-type) {
+    margin-bottom: 3%;
+}
+.timeline .timeline-year:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: calc(50% - 12px);
+    background-color: #b59e94;
+    border-radius: 100%;
+    z-index: 1;
+    margin-top: 2%;
+    border: 2px solid white;
+}
+.timeline .timeline-year:before {
+    content: attr(aria-label);
+    font-size: 100%;
+    font-weight: bold;
+    color: white;
+    left: 50%;
+    position: absolute;
+    margin-top: 5%;
+    transform: rotate(90deg);
+}
+.timeline .timeline-year .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    list-style: none;
+    max-height: 140px;
+}
+.timeline .timeline-year .container.left {
+    left: 0;
+}
+.timeline .timeline-year .container.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #475b63;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #475b63;
+}
+.timeline .timeline-year .container.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #475b63;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #475b63 transparent transparent;
+}
+.timeline .timeline-year .container.right::after {
+    left: -16px;
+}
+.timeline .timeline-year .container.right.alone {
+    left: 50%;
+}
+.timeline .timeline-year .container .content {
+    padding: 10px 30px;
+    background-color: #475b63;
+    position: relative;
+    border-radius: 6px;
+    color: white;
+    max-height: 140px;
+}
+.timeline .timeline-year .container .content .experience-icon {
+    float: right;
+}
+.timeline .timeline-year .container .content .experience-title {
+    font-size: 24px;
+}
+.timeline .timeline-year .container .content .experience-title.experience-without-desc {
+    margin: auto;
+}
+@media only screen and (max-width: 780px) {
+    #profile {
+        height: 100%;
+    }
+    #profile h1 {
+        font-size: 8vw;
+        margin: 10%;
+    }
+    #profile .container-timeline .timeline:after {
+        left: 3%;
+    }
+    #profile .container-timeline .timeline .timeline-year {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #profile .container-timeline .timeline .timeline-year:before {
+        left: 3%;
+        margin-top: 10%;
+    }
+    #profile .container-timeline .timeline .timeline-year:after {
+        left: 0%;
+    }
+    #profile .container-timeline .timeline .timeline-year .container {
+        flex: 1 100%;
+        width: 100%;
+    }
+    #profile .container-timeline .timeline .timeline-year .container .content h2 {
+        font-size: medium;
+    }
+    #profile .container-timeline .timeline .timeline-year .container .content p {
+        font-size: smaller;
+    }
+}
+
+/********************* SKILLS ***************************/
+#skills {
+    height: 100vh;
+    background-color: #c97d60;
+    display: flex;
+    font-family: "Playfair Display,serif";
+    font-weight: 700;
+    flex-direction: column;
+}
+#skills #container {
+    margin: auto;
+    display: inline;
+}
+#skills h1 {
+    font-family: "Bungee Shade";
+    font-size: 5vw;
+    color: #02142b;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+#skills ul {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: unset;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#skills ul li {
+    list-style: none;
+    text-align: center;
+    flex: max-content;
+    margin: 5% 0% 0% 0%;
+}
+#skills ul li img {
+    height: 200px;
+    width: 200px;
+}
+#skills ul li p {
+    color: #02142b;
+    font-size: 20px;
+}
+#skills ul li:last-of-type::before {
+    content: "&";
+    position: absolute;
+    left: calc(50% - (77px / 2));
+    font-size: 77px;
+    color: #02142b;
+    width: 2%;
+    font-family: "Bungee Shade";
+    font-weight: initial;
+}
+@media only screen and (max-width: 780px) {
+    #skills {
+        height: 100%;
+    }
+    #skills h1 {
+        font-size: 8vw;
+        margin: 10% 10% 0% 10%;
+    }
+    #skills ul li {
+        flex-basis: 100%;
+    }
+    #skills ul li img {
+        height: 150px;
+        width: 150px;
+    }
+    #skills ul li:last-of-type::before {
+        margin-top: -10px;
+        font-size: 45px;
+        left: calc(50% - (45px / 2));
+    }
+}
+
+/********************* OTHERS SKILLS ***************************/
+#others-skills {
+    height: 100vh;
+    background-color: #eddea4;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+#others-skills h1 {
+    font-family: "Bungee Shade";
+    font-size: 5vw;
+    color: #02142b;
+    margin: auto;
+    text-align: center;
+}
+#others-skills #others-skills-container {
+    margin: 0px 10%;
+}
+.canvas {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.comb {
+    width: 150px;
+    height: 150px;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.comb span,
+.comb p,
+.comb i {
+    color: #02142b;
+    font-size: 50px;
+}
+@media only screen and (max-width: 780px) {
+    #others-skills {
+        height: 100%;
+    }
+    #others-skills h1 {
+        font-size: 8vw;
+        margin: 10%;
+    }
+}
+
+/********************* PROJECTS ***************************/
+#projects {
+    height: 100vh;
+    background-color: #9ca3db;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+#projects h1 {
+    font-family: "Bungee Shade";
+    font-size: 5vw;
+    color: #02142b;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+#projects #projects-container {
+    height: 100%;
+}
+#projects #projects-container .cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#projects #projects-container .card {
+    text-align: center;
+    background-color: white;
+    box-shadow: 3px 3px 1px #394053;
+    height: 100px;
+    width: calc(100vh / 2);
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+#projects #projects-container .card .card-header {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}
+#projects #projects-container .card .card-header i.fas {
+    font-size: 30px;
+}
+#projects #projects-container .card .card-body {
+    height: 100%;
+    text-align: center;
+    padding: 0px 5px 5px 5px;
+    box-sizing: border-box;
+    width: 80%;
+}
+#projects #projects-container .card .title-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.25em;
+    height: 30%;
+    margin: 1% 0px 2% 0px;
+}
+#projects #projects-container .card .title-wrapper h2 {
+    font-family: "Bungee Shade";
+}
+#projects #projects-container .card .title-wrapper h2 a {
+    text-decoration: unset;
+    color: unset;
+}
+#projects #projects-container .card .desc-wrapper {
+    text-align: justify;
+}
+#projects #projects-container .card .desc-wrapper p {
+    font-size: small;
+}
+
+@media only screen and (max-width: 780px) {
+    #projects {
+        height: 100%;
+    }
+    #projects h1 {
+        font-size: 8vw;
+        margin: 10%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+    #projects .title-wrapper h2 {
+        font-size: 5vw;
+    }
+    #projects .desc-wrapper p {
+        font-size: smaller;
+    }
+    #projects .card {
+        margin: 0% 3% 3% 3%;
+    }
+}
+
+/********************* CONTACTS ***************************/
+#footer {
+    height: 100vh;
+    background-color: #d9e5d6;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+#footer h1 {
+    font-family: "Bungee Shade";
+    font-size: 5vw;
+    color: #02142b;
+    padding-bottom: 10%;
+    text-align: center;
+}
+#footer #footer-container {
+    margin: 0px 10%;
+}
+#footer #footer-container ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: initial;
+    justify-content: space-evenly;
+    text-align: center;
+}
+#footer #footer-container ul li {
+    width: 25%;
+    height: max-content;
+}
+#footer #footer-container ul li a {
+    text-decoration: none;
+    display: block;
+    color: #02142b;
+    transition: transform 0.3s ease-out;
+}
+#footer #footer-container ul li a:hover {
+    color: #c97d60 !important;
+    transform: translate(0, -5px);
+}
+#footer #footer-container ul li a i {
+    display: block;
+    font-size: 50px;
+}
+#footer #footer-container ul li a span {
+    margin-top: 5%;
+    display: block;
+}
+@media only screen and (max-width: 780px) {
+    #footer h1 {
+        font-size: 8vw;
+        margin: 10%;
+    }
+    #footer-container ul li:not(:first-of-type) {
+        flex: 1 100%;
+        padding-top: 30%;
+    }
+}
