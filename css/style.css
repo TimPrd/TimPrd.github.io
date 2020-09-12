@@ -226,8 +226,9 @@ h2 {
         flex: 1 100%;
         width: 100%;
     }
-    #profile .container-timeline .timeline .timeline-year .container .content h2 {
+    #profile .container-timeline .timeline .timeline-year .container .content h2.experience-title {
         font-size: medium;
+        line-height: 1;
     }
     #profile .container-timeline .timeline .timeline-year .container .content p {
         font-size: smaller;
@@ -512,6 +513,9 @@ h2 {
     display: block;
 }
 @media only screen and (max-width: 780px) {
+    #footer {
+        height: 100%;
+    }
     #footer h1 {
         font-size: 8vw;
         margin: 10%;
